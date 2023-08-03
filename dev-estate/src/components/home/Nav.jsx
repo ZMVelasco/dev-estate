@@ -10,7 +10,7 @@ function Nav () {
   }
 
   return (
-        <nav className='bg-indigo-300 font-manrope'>
+        <nav className='bg-indigo-300 font-manrope relative'>
             <div className='container mx-auto'>
                 <div className='flex items-center justify-between'>
                     <div className='text-white text-2xl flex font-orelega'>
@@ -18,20 +18,20 @@ function Nav () {
                         DE
                     </div>
                     <ul className={`hidden md:flex space-x-4 ${isOpen ? '' : 'hidden'}`}>
-                        <li className='text-white'>
+                        <li className='text-white hover:text-indigo-600'>
                             <Link to='/'>Home</Link>
                         </li>
-                        <li className='text-white'>
-                            <Link to='/login'>Login</Link>
+                        <li className='text-white hover:text-indigo-600'>
+                            <Link to='/login hover:text-indigo-600'>Login</Link>
                         </li>
-                        <li className='text-white'>
+                        <li className='text-white hover:text-indigo-600'>
                             <Link to='/catalog'>Catalog</Link>
                         </li>
-                        <li className='text-white'>
+                        <li className='text-white hover:text-indigo-600'>
                             <Link to='/admin'>Admin</Link>
                         </li>
                         <li>
-                            <button className='bg-blue-600 flex rounded-xl p-1 items-center pr-3 pl-3'>
+                            <button className='bg-blue-600 flex rounded-lg items-center pr-3 pl-3'>
                                 Log in
                             </button>
                         </li>
@@ -66,7 +66,7 @@ function Nav () {
                     </div>
                 </div>
                 {isOpen && (
-                    <div className='md:hidden mt-4'>
+                        <div className="md:hidden mt-4 absolute right-0 top-3 bg-indigo-300 w-full">
                         <Link
                             to='/'
                             className='block text-white mt-2 mb-2 font-medium hover:text-indigo-600'
