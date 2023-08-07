@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, React } from 'react'
 import buildingIcon from '../../assets/building-one.svg'
 
 function Nav () {
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -31,7 +32,10 @@ function Nav () {
                             <Link to='/admin'>Admin</Link>
                         </li>
                         <li>
-                            <button className='bg-blue-600 flex rounded-lg items-center pr-3 pl-3'>
+                            <button
+                            className='bg-blue-600 flex rounded-lg items-center pr-3 pl-3'
+                            onClick={() => navigate('/login')}
+                            >
                                 Log in
                             </button>
                         </li>
@@ -91,7 +95,9 @@ function Nav () {
                         >
                             Admin
                         </Link>
-                        <button className='bg-blue-600 block rounded-xl p-2 text-white w-full mt-4'>
+                        <button
+                        className='bg-blue-600 block rounded-xl p-2 text-white w-full mt-4'
+                        onClick={() => navigate('/login')}>
                             Log in
                         </button>
                     </div>
