@@ -1,4 +1,5 @@
 import { useState, React } from 'react'
+import { Link } from 'react-router-dom'
 import Nav from '../home/Nav'
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -15,8 +16,8 @@ const Login = () => {
       <h1>Login</h1>
       <Nav />
       <article className='w-full flex flex-col justify-center items-center bg-indigo-100'>
-        <p className='text-xl font-semibold'>Welcome back!</p>
-        <p className='text-lg'>New to Dev Estate?</p>
+        <p className='text-xl font-medium'>Welcome back!</p>
+        <p className='text-lg'>New to Dev Estate? <Link to='/signup' className='text-indigo-600'>Sign up here.</Link></p>
         <form className='flex flex-col w-2/3 md:w-1/3'>
           <label htmlFor='email'>Email</label>
           <input
